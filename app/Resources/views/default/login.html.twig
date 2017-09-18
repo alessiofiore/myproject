@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %} 
+    <h1>Login</h1>
+    {{ form_start(form, {'attr': {'class': 'my-form-class'} }) }}
+        <div>
+            {{ form_widget(form.email) }}
+            {{ form_errors(form.email) }}
+        </div>
+        <div>
+            {{ form_widget(form.password) }}
+            {{ form_errors(form.password) }}
+        </div>
+        {# Render CSRF token etc .#}
+        <div style="display:none">
+            {{ form_rest(form) }}
+        </div>
+        
+        <input type="submit" value="Submit">
+    {{ form_end(form) }}
+{% endblock %}
